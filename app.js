@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const isDark = document.body.classList.contains('dark-mode');
         setTheme(isDark ? 'light' : 'dark');
     }
+
     // Set initial theme
     const savedTheme = localStorage.getItem('theme');
     setTheme(savedTheme === 'dark' ? 'dark' : 'light');
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     }
     
+    // Save todos from localStorage if available
     function saveTodos() {
     localStorage.setItem('todos', JSON.stringify(todos));
     }
@@ -133,11 +135,13 @@ document.addEventListener('DOMContentLoaded', function() {
         errorMsg.textContent = '';
     }
 
+    // Add ToDo to list
     function addTodo(text) {
     todos.push({ text, completed: false, editing: false });
     renderTodos();
     }
     
+    // Delete ToDo from list
     function deleteTodo(idx) {
     todos.splice(idx, 1);
     renderTodos();
@@ -153,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderTodos();
     }
     
+    // Textbox validations on save
     function saveEdit(idx, newText) {
     const trimmed = newText.trim();
     if (trimmed === '') {
@@ -174,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderTodos();
     }
 
+    // Textbox validations on submit
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         const value = input.value;
