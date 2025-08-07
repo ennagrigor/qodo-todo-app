@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const input = document.getElementById('todo-input');
     const list = document.getElementById('todo-list');
     const themeSwitch = document.getElementById('theme-switch');
+    
 
     // Theme switching logic
     function setTheme(mode) {
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleTheme() {
         const isDark = document.body.classList.contains('dark-mode');
         setTheme(isDark ? 'light' : 'dark');
+        
     }
 
     // Set initial theme
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     errorMsg.style.color = 'red';
     errorMsg.style.margin = '8px 0';
     form.parentNode.insertBefore(errorMsg, form.nextSibling);
+    
 
     const MAX_LENGTH = 250;
 
