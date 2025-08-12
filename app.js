@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const input = document.getElementById('todo-input');
     const list = document.getElementById('todo-list');
     const themeSwitch = document.getElementById('theme-switch');
+
+    // test test test
     
 
     // Theme switching logic
